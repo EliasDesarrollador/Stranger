@@ -28,4 +28,7 @@ class Player:
             self.rect.y += self.velocidad
 
 
+            def draw(self, pantalla):
+                """Dibuja el jugador en la pantalla"""
+                pygame.draw.rect(pantalla, ROJO, self.rect)
         
