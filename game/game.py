@@ -21,4 +21,9 @@ class Game:
         self.player  = Player(380, 500)
         self.enemy = Enemy (200, 200)
 
-
+    def eventos (self):
+        """Maneja eventos (cerrar ventana, teclado, etc)"""
+        for evento in pygame.event.get():
+            if evento.type == pygame.QUIT:
+                self.running = False
+                
