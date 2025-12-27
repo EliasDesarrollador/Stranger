@@ -4,11 +4,11 @@ import pygame
 from config import ROJO
 
 class Player:
-    def__init__(self, x, y):
-    """Constructor del jugador 
-    x , y  = posicion inicial en la pantalla"""
-    self.rect = pygame.Rect(x, y , 50, 50 )# tamano del jugador 
-    self.velocidad = 5  # Velocidad de movimiento 
+    def __init__(self, x, y):
+      """Constructor del jugador 
+      x , y  = posicion inicial en la pantalla"""
+      self.rect = pygame.Rect(x, y , 50, 50 )# tamano del jugador 
+      self.velocidad = 5  # Velocidad de movimiento 
 
     def update(self):
         """ Se ejecuta en cada frame 
