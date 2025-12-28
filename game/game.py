@@ -31,5 +31,15 @@ class Game:
         """Actualiza la logica del juego """
         self.player.update()
         self.enemy.update()
+    
+    def dibujar(self):
+        """Dibuja todos los elementos en la pantalla"""
+        self.pantalla.fill(NEGRO)
+
+        self.player.draw(self.pantalla)
+        self.enemy.draw(self.pantalla)
+
+        pygame.display.update()
         
+
 
