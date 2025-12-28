@@ -40,6 +40,17 @@ class Game:
         self.enemy.draw(self.pantalla)
 
         pygame.display.update()
-        
 
 
+    def run(self):
+        """Bucle principal del juego"""
+        while self.running:
+            self.eventos()
+            self.actualizar()
+            self.dibujar()
+
+            #Limitar FPS 
+            self.reloj.tick(FPS)
+
+    pygame.quit()
+    sys.exit()
