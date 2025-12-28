@@ -27,3 +27,9 @@ class Game:
             if evento.type == pygame.QUIT:
                 self.running = False
                 
+    def  actualizar (self):
+        """Actualiza la logica del juego """
+        self.player.update()
+        self.enemy.update()
+        
+
