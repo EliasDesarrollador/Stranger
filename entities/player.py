@@ -1,5 +1,4 @@
 
-
 # entities/player.py
 import pygame
 from config import ROJO
@@ -10,13 +9,13 @@ class Player:
         Constructor del jugador
         x, y = posición inicial en la pantalla
         """
-        self.rect = pygame.Rect(x, y, 50, 50)
-        self.velocidad = 5
+        self.rect = pygame.Rect(x, y, 50, 50)  # Tamaño del jugador
+        self.velocidad = 5  # Velocidad de movimiento
 
     def update(self):
         """
         Se ejecuta en cada frame
-        Maneja la lógica del jugador
+        Maneja la lógica del movimiento del jugador
         """
         teclas = pygame.key.get_pressed()
 
