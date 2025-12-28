@@ -10,7 +10,7 @@ class Game:
     def __init__(self):
         pygame .init()
         #Crear ventana del juego 
-        self.pantalla = pygame.display.set_model((ANCHO, ALTO))
+        self.pantalla = pygame.display.set_mode((ANCHO, ALTO))
         pygame.display.set_caption("Stranger Things - Upside Down")
         #Reloj para controlar FPS 
         self.reloj = pygame.time.Clock()
@@ -51,6 +51,3 @@ class Game:
 
             #Limitar FPS 
             self.reloj.tick(FPS)
-
-    pygame.quit()
-    sys.exit()
