@@ -5,6 +5,8 @@ import sys
 from config import ANCHO, ALTO, FPS, NEGRO
 from entities.player import Player 
 from entities.enemy import Enemy
+from game.menu import Menu
+
  
 class Game:   
     def __init__(self):
@@ -41,13 +43,21 @@ class Game:
 
         pygame.display.update()
 
-
     def run(self):
-        """Bucle principal del juego"""
-        while self.running:
-            self.eventos()
-            self.actualizar()
-            self.dibujar()
+     """Bucle principal del juego"""
 
-            #Limitar FPS 
-            self.reloj.tick(FPS)
+         # ---- MENU DE INICIO ----
+     menu = Menu(self.pantalla)
+     menu.run()   # Se queda acá hasta apretar ENTER
+
+    # ---- JUEGO ----
+     while self.running:
+        self.eventos()
+        self.actualizar()
+        self.dibujar()
+
+        # Limitar FPS
+        self.reloj.tick(FPS)
+
+pygame.quit()
+sys.exit()
