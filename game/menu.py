@@ -38,6 +38,7 @@ class Menu:
                 if evento.type == pygame.KEYDOWN:
                     if evento.key == pygame.K_RETURN:
                         self.running = False
+                        pygame.mixer.music.stop() # para la musica al empezar el juego 
 
             self.pantalla.fill((0, 0, 0))
             self.pantalla.blit(self.imagen, (0, 0))
