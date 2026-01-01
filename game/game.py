@@ -16,6 +16,9 @@ class Game:
         # Reloj para controlar FPS 
         self.reloj = pygame.time.Clock()
 
+        #Cargar mapa del nivel 1  
+        self.mapa = pygame.image.load('assets/images/hawkinsdowntown.png').convert()
+
         # Control del bucle principal 
         self.running = True
         # Crear objetos del juego 
@@ -35,7 +38,9 @@ class Game:
     
     def dibujar(self):
         """Dibuja todos los elementos en la pantalla"""
-        self.pantalla.fill(NEGRO)
+        self.pantalla.blit(self.mapa, (0, 0)) 
+        
+        # Dibujar   personajes encima del mapa 
         self.player.draw(self.pantalla)
         self.enemy.draw(self.pantalla)
         pygame.display.update()
