@@ -3,8 +3,8 @@
 
 #Archivo de configuracion general del juego 
 # Tamano de la ventana 
-ANCHO = 800
-ALTO = 600
+ANCHO = 1200
+ALTO = 800
 # FPS = cuadros por segundo 
 FPS = 60
 

@@ -10,30 +10,36 @@ class Menu:
         self.reloj = pygame.time.Clock()
         self.running = True
 
-        # Cargar imagen del menu
-        self.imagen = pygame.image.load(
-            "assets/images/intro.png"
-        ).convert_alpha()
+        # Inicializar musica 
+        pygame.mixer.init()
+        pygame.mixer.music.load("assets/sounds/Kyle Dixon & Michael Stein - Kids - Intensive Drops Network.mp3")
+        pygame.mixer.music.play(-1) # Reproducir en bucle 
+        try:
+            self.imagen = pygame.image.load(
+                "assets/menu/intro.png"   # ruta 
+            ).convert()
 
-        # Ajustar imagen al tamaño de la ventana
-        self.imagen = pygame.transform.scale(
-            self.imagen, (ANCHO, ALTO)
-        )
+            self.imagen = pygame.transform.scale(
+                self.imagen, (ANCHO, ALTO)
+            )
+
+        except Exception as e:
+            print("ERROR cargando imagen del menu:", e)
+            pygame.quit()
+            sys.exit()
 
     def run(self):
-        """Bucle del menu"""
         while self.running:
             for evento in pygame.event.get():
                 if evento.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
 
-                # Presionar ENTER para empezar
                 if evento.type == pygame.KEYDOWN:
                     if evento.key == pygame.K_RETURN:
                         self.running = False
 
-            # Dibujar menu
+            self.pantalla.fill((0, 0, 0))
             self.pantalla.blit(self.imagen, (0, 0))
-            pygame.display.update()
+            pygame.display.flip()
             self.reloj.tick(FPS)
